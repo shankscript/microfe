@@ -1,4 +1,19 @@
 <img src="./images/ng.svg" alt="Angular Logo" class="logo" />
-<p>Hello <strong>{{name}}</strong> from your friendly Angular component!</p>
-<button type="submit" class="btn btn-secondary" (click)="helloEvt.next()">Say hello</button>
 
+<p>Hello <strong>{{name}}</strong> !</p>
+<button  class="btn btn-primary" (click)="helloEvt.next()">Hi to React</button>
+
+
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Type store value</label>
+    <input class="form-control" #box
+      (keyup.enter)="update(box.value)"
+      (blur)="update(box.value)"/>
+   
+  </div>
+ 
+</form>
+
+<button  class="btn btn-secondary" (click)="onclick()">Set store value</button>

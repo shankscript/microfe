@@ -1,11 +1,9 @@
-import {util} from '../../shared/util';
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import htmlToReact from 'html-to-react';
 
-import { ExampleComponent } from './ExampleComponent.js';
+import { ExampleComponent } from './ExampleComponent.jsx';
 
-console.log(util);
 class ReactElement extends HTMLElement {
   static get observedAttributes() {return ['name']; }
   constructor() {

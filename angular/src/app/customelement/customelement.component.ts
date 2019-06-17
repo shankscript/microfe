@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
+import {util} from '../../../../shared/util';
 
 @Component({
   selector: 'app-customelement',
@@ -11,8 +12,23 @@ export class CustomelementComponent implements OnInit {
   @Input() name: string;
   @Output() helloEvt: EventEmitter<string> = new EventEmitter();
 
-  constructor() { }
+
+  value = '';
+  store;
+  constructor() { 
+  	this.store = util.getStore();
+  }
 
   ngOnInit() {
   }
+
+  onclick() {
+  	console.log('clicked', this.value);
+  	this.store.setVal('key', this.value);
+  }
+
+  update(value: string) { 
+  	this.value = value; 
+  }
+
 }
